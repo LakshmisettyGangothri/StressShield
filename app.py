@@ -12,7 +12,6 @@ from medical_reports import MedicalReportGenerator
 from medical_insights import MedicalInsightsEngine
 from data_validator import MedicalDataValidator
 
-st.title("StressShield - Stress Detection")
 
 # Initialize medical components
 @st.cache_resource
@@ -33,6 +32,7 @@ st.set_page_config(
     layout='wide',
     initial_sidebar_state='expanded'
 )
+st.title("StressShield - Stress Detection")
 
 # Initialize session state
 if 'patient_history' not in st.session_state:
