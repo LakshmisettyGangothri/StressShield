@@ -12,6 +12,8 @@ from medical_reports import MedicalReportGenerator
 from medical_insights import MedicalInsightsEngine
 from data_validator import MedicalDataValidator
 
+st.title("StressShield - Stress Detection")
+
 # Initialize medical components
 @st.cache_resource
 def initialize_medical_system():
