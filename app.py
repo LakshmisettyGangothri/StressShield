@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+from streamlit_autorefresh import st_autorefresh
 from plotly.subplots import make_subplots
 import time
 import datetime
@@ -11,6 +12,8 @@ from medical_parameters import MedicalParameterAnalyzer
 from medical_reports import MedicalReportGenerator
 from medical_insights import MedicalInsightsEngine
 from data_validator import MedicalDataValidator
+
+
 
 
 # Initialize medical components
@@ -388,6 +391,7 @@ with tab3:
             st.plotly_chart(fig_live, use_container_width=True)
         
         # Auto-refresh
+        st_autorefresh(interval=refresh_rate * 1000, limit=100, key="monitoring_refresh")
         #query_params = st.experimental_get_query_params()
 
         '''if "refresh" not in query_params:
