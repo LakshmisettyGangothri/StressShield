@@ -388,8 +388,18 @@ with tab3:
             st.plotly_chart(fig_live, use_container_width=True)
         
         # Auto-refresh
-        time.sleep(refresh_rate)
-        st.rerun()
+        #query_params = st.experimental_get_query_params()
+
+        '''if "refresh" not in query_params:
+            st.experimental_set_query_params(refresh="off")
+        else:
+            # Only rerun once if explicitly allowed
+            if query_params.get("refresh") == ["on"]:
+                st.experimental_set_query_params(refresh="off")
+                time.sleep(refresh_rate)
+                st.rerun()'''
+        if st.button("🔁 Refresh Monitoring"):
+            st.experimental_rerun()
     
     else:
         st.info('📊 Click "Enable Live Monitoring" to start real-time monitoring')
